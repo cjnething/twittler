@@ -3,25 +3,108 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src="jquery.timeago.js"></script>
+     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+   <link rel = "stylesheet" href = "http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+    <link href= "style.css" rel="stylesheet">
   </head>
   <body>
     <script>
-
-      $(document).ready(function(){
+    $(document).ready(function(){
         var $body = $('body');
-        $body.html('');
+       
+        var endVal = 0;
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
+        var shawn = [];
+        var marcus = [];
+        var sharks = [];
+        var douglas = [];
 
+
+      $(".row").on('click', function() {
+        makeTweet();
       });
 
+      $("#viewallshawn").on('click', function() {
+         var shawnJoined = shawn.join("\n");
+         alert(shawnJoined);
+      });
+
+      $("#viewallmarcus").on('click', function() {
+         var marcusJoined = marcus.join("\n");
+         alert(marcusJoined);
+      });
+
+      $("#viewallsharks").on('click', function() {
+         var sharksJoined = sharks.join("\n");
+         alert(sharksJoined);
+      });
+
+      $("#viewalldouglas").on('click', function() {
+         var douglasJoined = douglas.join("\n");
+         alert(douglasJoined);
+      });
+
+      var makeTweet = function(tweet) {
+        var index = streams.home.length - 1;
+        var x = index;
+        while(endVal <= index){
+          var tweet = streams.home[endVal];
+          var $tweet = $('<div></div>');
+          $tweet.text(tweet.created_at + ': @' + tweet.user + ' '+ tweet.message);
+          $tweet.prependTo($('.feed'));
+          endVal++;
+         if (tweet.user === "shawndrost") {
+            shawn.push(tweet.created_at + ': @shawndrost ' + tweet.message);
+          }
+          else if (tweet.user === "mracus") {
+            marcus.push(tweet.created_at + ': @mracus '+ tweet.message);
+          }
+          else if (tweet.user === "sharksforcheap") {
+            sharks.push(tweet.created_at + ': @sharksforcheap  ' + tweet.message);
+          }
+          else if (tweet.user === "douglascalhoun") {
+            douglas.push(tweet.created_at + ': @douglascalhoun ' + tweet.message);
+          }
+        };
+        endVal = x; 
+      };
+
+
+      });
+    
     </script>
+
+  <div class = "container">
+  <div class = "jumbotron">
+    <div class = "container">
+        <h1>Twittler</h1>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "container">
+      <h2>View Tweet Feed</h2>
+    </div>
+  </div>
+  <div id = "userTweets">
+      <button class = "user" id = "viewallshawn">@shawndrost</button>
+      <button class = "user" id = "viewallmarcus">@mracus</button>
+      <button class = "user" id = "viewallsharks">@sharksforcheap</button>
+      <button class = "user" id = "viewalldouglas">@douglascalhoun</button>
+  </div>
+  <div id="tweetFeed">
+  <div class = "feed row span7" style>
+    <div class = "container">
+      <div class = "username span3">
+      </div>
+    </div>
+  </div>
+</div>
+  <div class = "footer">
+    <div class = "container">
+    <p>Julia Nething, Hack Reactor Cohort 24</p>
+  </div>
+  </div>
+</div>
   </body>
 </html>
