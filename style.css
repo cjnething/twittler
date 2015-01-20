@@ -1,0 +1,64 @@
+body {
+  background-color: #C0DEED;
+  background-image: url(http://goo.gl/PxBK7v);
+  background-repeat: repeat-y;
+  background-position: 50px 175px;
+}
+.jumbotron {
+  color: #ffffff;
+  font-family: 'Shift', sans-serif;
+  font-size: 20px;
+  background-color: #0099cc;
+  border: 3px solid #ffffff;
+  margin-right: auto;
+  text-align: center;
+}
+
+.row {
+  color: #66757f;
+  cursor: pointer;
+  font-family: 'Shift', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center
+}
+
+.feed {
+  color: #66757f;
+  font-family: 'Shift', sans-serif;
+  font-size: 16px;
+  padding: 10px 0;
+  margin-left: 0px;
+  border-top: 1px solid #aaa;
+  text-align: left;
+}
+
+.footer {
+  color: white;
+  background-color: #66757f;
+  font-family: 'Shift', sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+.username {
+  color: orange;
+  cursor: pointer;
+  font-family: 'Shift', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.user {
+  color: white;
+  background-color: #66757f;
+  font-family: 'Shift', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  padding-left: 73px;
+  padding-right: 73px;
+}
